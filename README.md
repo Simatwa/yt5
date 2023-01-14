@@ -42,7 +42,7 @@ $ bash setup.sh
 
 ## Usage ##
 
-1. Video
+#### Video #### 
 
 - Videos can be downloaded by parsing a `URI` <sup>prefixed</sup> or <sub>postfixed</sub> by its category:
 - For instances:
@@ -87,9 +87,9 @@ $ yt5 fnm <file-path>
 ```
 ![yt55](assets/yt55.jpg)
 			
-2. Audio
+####  Audio #### 
 
-- Audio of a video can be downloaded by adding `---mp3` to the commands parsed.
+- Audio of a video can be downloaded by adding `--mp3` to the commands parsed.
   - For instance:
 1. Single audio : 
   		
