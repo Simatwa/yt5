@@ -27,7 +27,7 @@ yyyyyyy           yyyyyyyttttttt:::::ttttttt    5:::::5
                                                                    
                                                                    
 ```
-- **yt5** is a [Python](https://python.org) script that downloads [YouTube](https://www.youtube.com) ***Videos* & ***audios*** at 'console' environment.
+- **yt5** is a [Python](https://python.org) script that downloads [YouTube](https://www.youtube.com) ***Videos*** & ***audios*** at `console` environment.
 
 ## Installation ##
 
