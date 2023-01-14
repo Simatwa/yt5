@@ -1,6 +1,6 @@
 # yt5 #
 
-'''
+```
                                                                    
                                                                    
                                   tttt          555555555555555555 
@@ -26,16 +26,16 @@ yyyyyyy           yyyyyyyttttttt:::::ttttttt    5:::::5
   yyyyyyy                                                          
                                                                    
                                                                    
-'''
-- **yt5** is a python script that downloads [YouTube](https://www.youtube.com) ***Videos* & ***audios*** at 'console' environment.
+```
+- **yt5** is a [Python](https://python.org) script that downloads [YouTube](https://www.youtube.com) ***Videos* & ***audios*** at 'console' environment.
 
 ## Installation ##
 
-'''
+``
 $ git clone https://github.com/Simatwa/yt5.git
 $ cd yt5
 $ bash setup.sh
-'''
+```
 
 
 ## Usage ##
@@ -45,52 +45,61 @@ $ bash setup.sh
 -Videos can be downloaded by parsing a 'URI' <sup>prefixed</sup> or <sub>postfixed</sub> by its category:
 	***For instances:***
 		-Single video:
-			'''
+
+```
 $ yt5 url <Video-URI>
-			'''		
+```		
       ![yt52](assets/yt52.jpg)
       
-           -Consequently, this can be done by emitting 'url' tag since ***url*** is the default category.
-           '''
+           -Alternatively, this can be done by emitting 'url' command since ***url*** is the default category.
+
+```
 $ yt5 <Video-URI>
-           '''
+```
        ![yt51](assets/yt51.jpg)
 
 
-		-Whole videos in a Playlist:
-'''
+		-All videos in a Playlist:
+
 $ yt5 playlist <Playlist-URI>
-'''
+
+```
 	 ![yt53](assets/yt53.jpg)
 	 
-	    -Whole videos in a Channel :
-'''
+	    -All videos in a Channel :
+
+```
 $ yt5 channel <Channel-URI>
-'''
+
+```
 	   ![yt54](assets/yt54.jpg)
 		
 		-Collection of single-video's URI contained in a text file :
-'''
+
+```
 $ yt5 fnm <file-path>
-'''
+```
 		![yt55](assets/yt55.jpg)
 			
 2.Audio
 
--Video-audio's can be downloaded by adding '---mp3' to the commands parsed.
+-Audio of a video can be downloaded by adding '---mp3' to the commands parsed.
   -For instance:
   	-Single audio:
-'''
+  		
+```
 $ yt5 url <Video-URI>  --mp3
-'''
+```
+
        ![yt56](assets/yt56.jpg)
        
       -Similarly, this can be done to **other** ***categories***.
 
 -For further information you can run:
-'''
+	
+```
 $ yt5 -h
-'''  
+```  
 
 
 ## Independencies ##
