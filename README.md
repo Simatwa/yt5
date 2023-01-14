@@ -31,10 +31,11 @@ yyyyyyy           yyyyyyyttttttt:::::ttttttt    5:::::5
 
 ## Installation ##
 
-``
+```
 $ git clone https://github.com/Simatwa/yt5.git
 $ cd yt5
 $ bash setup.sh
+
 ```
 
 
@@ -48,6 +49,7 @@ $ bash setup.sh
 
 ```
 $ yt5 url <Video-URI>
+
 ```		
       ![yt52](assets/yt52.jpg)
       
@@ -55,6 +57,7 @@ $ yt5 url <Video-URI>
 
 ```
 $ yt5 <Video-URI>
+
 ```
        ![yt51](assets/yt51.jpg)
 
@@ -78,6 +81,7 @@ $ yt5 channel <Channel-URI>
 
 ```
 $ yt5 fnm <file-path>
+
 ```
 		![yt55](assets/yt55.jpg)
 			
@@ -89,6 +93,7 @@ $ yt5 fnm <file-path>
   		
 ```
 $ yt5 url <Video-URI>  --mp3
+
 ```
 
        ![yt56](assets/yt56.jpg)
@@ -99,6 +104,7 @@ $ yt5 url <Video-URI>  --mp3
 	
 ```
 $ yt5 -h
+
 ```  
 
 
