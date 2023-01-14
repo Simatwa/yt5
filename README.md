@@ -30,6 +30,7 @@ yyyyyyy           yyyyyyyttttttt:::::ttttttt    5:::::5
 - **yt5** is a [Python](https://python.org) script that downloads [YouTube](https://www.youtube.com) ***Videos*** & ***audios*** at `console` environment.
 
 ## Installation ##
+- Run the following commands in the terminal to get started.
 
 ```
 $ git clone https://github.com/Simatwa/yt5.git
@@ -41,7 +42,7 @@ $ bash setup.sh
 
 ## Usage ##
 
-### 1. Video ###
+1. Video
 
 - Videos can be downloaded by parsing a `URI` <sup>prefixed</sup> or <sub>postfixed</sub> by its category:
 - For instances:
@@ -86,9 +87,9 @@ $ yt5 fnm <file-path>
 ```
 ![yt55](assets/yt55.jpg)
 			
-### 2. Audio ###
+2. Audio
 
-- Audio of a video can be downloaded by adding '---mp3' to the commands parsed.
+- Audio of a video can be downloaded by adding `---mp3` to the commands parsed.
   - For instance:
 1. Single audio : 
   		
