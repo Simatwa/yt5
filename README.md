@@ -45,60 +45,61 @@ $ bash setup.sh
 
 - Videos can be downloaded by parsing a `URI` <sup>prefixed</sup> or <sub>postfixed</sub> by its category:
 - For instances:
-		- Single video :
+##### Single video : #####
 
 ```
 $ yt5 url <Video-URI>
 
 ```		
-      ![yt52](assets/yt52.jpg)
-      
-          - Alternatively, this can be done by emitting 'url' command since ***url*** is the default category.
+![yt52](assets/yt52.jpg)
+     
+- Alternatively, this can be done by emitting 'url' command since ***url*** is the default category.
 
 ```
 $ yt5 <Video-URI>
 
 ```
-       ![yt51](assets/yt51.jpg)
+![yt51](assets/yt51.jpg)
 
 
-		- All videos in a Playlist:
+##### All videos in a Playlist: ##### 
 
+```
 $ yt5 playlist <Playlist-URI>
 
 ```
-	 ![yt53](assets/yt53.jpg)
+![yt53](assets/yt53.jpg)
 	 
-	    - All videos in a Channel :
+##### All videos in a Channel : ##### 
 
 ```
 $ yt5 channel <Channel-URI>
 
 ```
-	   ![yt54](assets/yt54.jpg)
+![yt54](assets/yt54.jpg)
 		
-		- Collection of single-video's URI contained in a text file :
+#####  Collection of single-video's URI contained in a text file : ##### 
 
 ```
 $ yt5 fnm <file-path>
 
 ```
-		![yt55](assets/yt55.jpg)
+![yt55](assets/yt55.jpg)
 			
 2.Audio
 
 - Audio of a video can be downloaded by adding '---mp3' to the commands parsed.
   - For instance:
-  	- Single audio:
+##### Single audio: ##### 
   		
 ```
 $ yt5 url <Video-URI>  --mp3
 
 ```
 
-       ![yt56](assets/yt56.jpg)
+![yt56](assets/yt56.jpg)
        
-     - Similarly, this can be done to **other** ***categories***.
+- Similarly, this can be done to **other** ***categories***.
 
 - For further information you can run:
 	
