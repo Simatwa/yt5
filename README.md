@@ -43,9 +43,9 @@ $ bash setup.sh
 
 1.Video
 
--Videos can be downloaded by parsing a `URI` <sup>prefixed</sup> or <sub>postfixed</sub> by its category:
-	*** For instances: ***
-		- Single video:
+- Videos can be downloaded by parsing a `URI` <sup>prefixed</sup> or <sub>postfixed</sub> by its category:
+- For instances:
+		- Single video :
 
 ```
 $ yt5 url <Video-URI>
