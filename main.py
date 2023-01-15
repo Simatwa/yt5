@@ -5,7 +5,6 @@ from sys import argv,exit
 from datetime import datetime
 import colorama as col
 import logging
-argv.append('-h')
 if '--usage' in argv:
 	argv.extend(['url','a'])
 import os,argparse
