@@ -2,6 +2,7 @@
 <a href="https://github.com/Simatwa/yt5"><img src="https://img.shields.io/static/v1?logo=github&color=blueviolet&label=Test&message=Pass"/></a>
 <a href="LICENSE"><img src="https://img.shields.io/static/v1?logo=MIT&color=Blue&message=MIT&label=License"/></a>
 <a href="#" alt="coverage"><img src="https://img.shields.io/static/v1?logo=Coverage&label=Coverage&message=80%&color=yellowgreen"/></a>
+<a href="https://github.com/psf/black"><img src="https://img.shields.io/static/v1?label=Code style&message=black&color=Black"/></a>
 <a href="#" alt="progress"><img src="https://img.shields.io/static/v1?logo=Progress&label=Progress&message=60%&color=green"/></a>
 
 </p>
