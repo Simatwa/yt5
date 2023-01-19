@@ -109,6 +109,35 @@ $ yt5 -h
 
 ```  
 
+* Output :
+
+```
+usage: yt5 [-h] [-v] [-res [720p|480p|360p|240p|144p]] [-max MAXIMUM] [-dir DIRECTORY] [--mp3]
+           [--show] [--static] [--usage]
+           [[fnm|url|playlist|channel]] url
+
+positional arguments:
+  [fnm|url|playlist|channel]
+                        Category of the videos referred by the link or filename[fnm] containing
+                        links
+  url                   Link of the video
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  -res [720p|480p|360p|240p|144p], --resolution [720p|480p|360p|240p|144p]
+                        Resolution [quality] of videos to be downloaded in
+  -max MAXIMUM, --maximum MAXIMUM
+                        Maximum videos to be downloaded
+  -dir DIRECTORY, --directory DIRECTORY
+                        Directory for saving downloaded file
+  --mp3                 Specify to download audio only
+  --show                Show the downloaded file-path
+  --static              Restricts stdout of file-path in prose-format
+  --usage               Show this help info in more stylistic way
+
+```
+
 
 ## Independencies ##
 
