@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 __version__ = "1.1"
-__author__="Smartwa"
+__author__ = "Smartwa"
 from pytube import YouTube, Playlist, Channel
 from sys import argv, exit
 from datetime import datetime
@@ -294,7 +294,9 @@ if __name__ == "__main__":
         default=100000,
         type=int,
     )
-    parser.add_argument("-dir", "--directory", help="Directory for saving downloaded file")
+    parser.add_argument(
+        "-dir", "--directory", help="Directory for saving downloaded file"
+    )
     parser.add_argument(
         "--mp3", action="store_true", help="Specify to download audio only"
     )
