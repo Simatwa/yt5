@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 __version__ = "1.1"
+__author__="Smartwa"
 from pytube import YouTube, Playlist, Channel
 from sys import argv, exit
 from datetime import datetime
@@ -252,14 +253,14 @@ def usage():
     print(
         output(
             col.Fore.RED,
-            "\n\nOne of the following args should be introduced firstly.\n",
+            "\n\nRequired arguments.\n",
         )
     )
     print(output(col.Fore.CYAN, tbl(data1)))
     print(
         output(
             col.Fore.YELLOW,
-            "\n\nThese args can occupy any position after the above args.\n",
+            "\n\nPositional arguments.\n",
         )
     )
     print(output(col.Fore.GREEN, tbl(data2)))
@@ -275,12 +276,14 @@ if __name__ == "__main__":
         nargs="?",
         default="url",
         choices=["fnm", "url", "playlist", "channel"],
+        metavar="[fnm|url|playlist|channel]",
         help="Category of the videos referred by the link or filename[fnm] containing links",
     )
     parser.add_argument(
         "-res",
         "--resolution",
         choices=["720p", "1080p", "4k", "480p", "360p", "240p", "144p"],
+        metavar="[720p|480p|360p|240p|144p]",
         help="Resolution [quality] of videos to be downloaded in",
         default="720p",
     )
@@ -291,7 +294,7 @@ if __name__ == "__main__":
         default=100000,
         type=int,
     )
-    parser.add_argument("-dir", "--directory", help="Directory for saving videos")
+    parser.add_argument("-dir", "--directory", help="Directory for saving downloaded file")
     parser.add_argument(
         "--mp3", action="store_true", help="Specify to download audio only"
     )
@@ -301,7 +304,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--static",
         action="store_true",
-        help="Restricts printing of downloaded file-name in prose-format",
+        help="Restricts stdout of file-path in prose-format",
     )
     parser.add_argument(
         "--usage", action="store_true", help="Show this help info in more stylistic way"
