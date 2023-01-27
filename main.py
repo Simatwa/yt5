@@ -1,17 +1,21 @@
 #!/usr/bin/python3
-__version__ = "1.1"
+__version__ = "1.2"
 __author__ = "Smartwa"
 from pytube import YouTube, Playlist, Channel
 from sys import argv, exit
 from datetime import datetime
 import colorama as col
 import logging
+from threading import Thread as thr
 
 if "--usage" in argv:
     argv.extend(["url", "a"])
 import os, argparse
 
-cwd = os.getcwd()
+(
+    cwd,
+    totals,
+) = os.getcwd(), {"count": 0}
 logging.basicConfig(
     format="%(asctime)s -%(levelname)s -%(message)s - (%(lineno)s)",
     datefmt="%d-%b-%Y %H:%M:%S",
@@ -25,14 +29,6 @@ class main:
     def __init__(self, url8):
         self.url = url8[0]
         self.no = url8[1]
-        try:
-            self.yt = YouTube(
-                url=self.url,
-                on_progress_callback=self.on_progress,
-                on_complete_callback=self.on_complete,
-            )
-        except Exception as e:
-            logging.error(str(e))
         if args.static:
             self.out = lambda x: print(
                 output(col.Fore.YELLOW, f"[*] Downloading [{self.no}]:")
@@ -56,6 +52,22 @@ class main:
             else:
                 self.dir = "Downloads/Video"
 
+    # Creates the download object
+    def yt(self):
+        try:
+            yt = YouTube(
+                url=self.url,
+                on_progress_callback=self.on_progress,
+                on_complete_callback=self.on_complete,
+            )
+        except Exception as e:
+            logging.error(str(e))
+            rp = None
+        else:
+            rp = yt
+        finally:
+            return rp
+
     # Formats int to ensure consistency of values being displayed
     def fmt(self, val):
         val = str(val)
@@ -71,6 +83,8 @@ class main:
 
     # Shows download progress per video in %
     def on_progress(self, stream, chunk, bytes_remaining):
+        if args.thread:
+            return None
         progress = (
             f"{self.fmt(round(100 - (bytes_remaining/stream.filesize * 100),2))}%"
         )
@@ -97,13 +111,37 @@ class main:
             except:
                 pass
 
+    # Updats threads count
+    def update_count(self):
+        if totals["count"] % args.thread == 0:
+            rp = True
+        else:
+            rp = False
+        totals["count"] = totals["count"] + 1
+        return rp
+
     # Downloads audio
     def audio(self):
         try:
-            nm = self.yt.title + ".mp3"
-            self.out(nm)
-            self.yt.streams.get_audio_only().download(self.dir)
+
+            def _download():
+                yt = self.yt()
+                nm = yt.title + ".mp3"
+                self.out(nm)
+                yt.streams.get_audio_only().download(self.dir)
+
+            if args.thread:
+                t1 = thr(
+                    target=_download,
+                )
+                t1.start()
+                if self.update_count():
+                    t1.join()
+            else:
+                _download()
         except Exception as e:
+            with open("download_failed.txt", "a", encoding="utf-8") as file:
+                file.write(self.url)
             self.out_not(e)
 
     # Downloads video
@@ -113,8 +151,21 @@ class main:
 
         res = args.resolution.lower()
         try:
-            disp(self.yt.title, res)
-            self.yt.streams.get_by_resolution(res).download(self.dir)
+
+            def _download():
+                yt = self.yt()
+                disp(yt.title, res)
+                yt.streams.get_by_resolution(res).download(self.dir)
+
+            if args.thread:
+                t1 = thr(
+                    target=_download,
+                )
+                t1.start()
+                if self.update_count():
+                    t1.join()
+            else:
+                _download()
         except Exception as e:
             e = str(e).lower()
             if "keyboard" in e or "eof" in e:
@@ -122,8 +173,19 @@ class main:
             rs.remove(res)
             for reso in rs:
                 try:
-                    disp(self.yt.title, reso)
-                    self.yt.streams.get_by_resolution(reso).download(self.dir)
+
+                    def _download():
+                        yt = self.yt()
+                        disp(yt.title, reso)
+                        yt.streams.get_by_resolution(reso).download(self.dir)
+
+                    if args.thread:
+                        t1 = thr(target=_download)
+                        t1.start()
+                        if self.update_count():
+                            t1.join()
+                    else:
+                        _download()
                 except Exception as e:
                     e = str(e).lower()
                     if "keyboard" in e or "eof" in e:
@@ -292,6 +354,12 @@ if __name__ == "__main__":
         "--maximum",
         help="Maximum videos to be downloaded",
         default=100000,
+        type=int,
+    )
+    parser.add_argument(
+        "-thr",
+        "--thread",
+        help="Thread download process with the specified amount",
         type=int,
     )
     parser.add_argument(
