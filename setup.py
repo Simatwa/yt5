@@ -1,5 +1,5 @@
 from setuptools import setup
-from GPTCLI import __version__, __author__, __repo__, __info__
+from yt5 import __version__, __author__, __repo__, __info__
 
 setup(
     name="yt5",
