@@ -37,15 +37,20 @@ yyyyyyy           yyyyyyyttttttt:::::ttttttt    5:::::5
 - **yt5** is a [Python](https://python.org) script that downloads [YouTube](https://www.youtube.com) ***Videos*** & ***audios*** at `console` environment.
 
 ## Installation ##
-- Run the following commands in the terminal to get started.
+- From Github - *source*
 
 ```
-$ git clone https://github.com/Simatwa/yt5.git
-$ cd yt5
-$ bash setup.sh
+git clone https://github.com/Simatwa/yt5.git
+cd yt5
+python setup.py install
 
 ```
 
+- From Pypi
+
+```
+pip install yt5
+```
 
 ## Usage ##
 
@@ -59,15 +64,15 @@ $ bash setup.sh
 $ yt5 url <Video-URI>
 
 ```		
-![yt52](assets/yt52.jpg)
+![yt52](https://github.com/Simatwa/yt5/raw/main/assets/yt52.jpg)
      
-- Alternatively, this can be done by emitting `url` command since it's the default category.
+- Alternatively, this can be done by omitting `url` command since it's the default category.
 
 ```
 $ yt5 <Video-URI>
 
 ```
-![yt51](assets/yt51.jpg)
+![yt51](https://github.com/Simatwa/yt5/raw/main/assets/yt51.jpg)
 
 
 2. All videos in a Playlist :
@@ -76,7 +81,7 @@ $ yt5 <Video-URI>
 $ yt5 playlist <Playlist-URI>
 
 ```
-![yt53](assets/yt53.jpg)
+![yt53](https://github.com/Simatwa/yt5/raw/main/assets/yt53.jpg)
 	 
 3. All videos in a Channel : 
 
@@ -84,7 +89,7 @@ $ yt5 playlist <Playlist-URI>
 $ yt5 channel <Channel-URI>
 
 ```
-![yt54](assets/yt54.jpg)
+![yt54](https://github.com/Simatwa/yt5/raw/main/assets/yt54.jpg)
 		
 4. Collection of single-video's URI contained in a text file : 
 
@@ -92,7 +97,7 @@ $ yt5 channel <Channel-URI>
 $ yt5 fnm <file-path>
 
 ```
-![yt55](assets/yt55.jpg)
+![yt55](https://github.com/Simatwa/yt5/raw/main/assets/yt55.jpg)
 			
 ####  Audio #### 
 
@@ -105,7 +110,7 @@ $ yt5 url <Video-URI>  --mp3
 
 ```
 
-![yt56](assets/yt56.jpg)
+![yt56](https://github.com/Simatwa/yt5/raw/main/assets/yt56.jpg)
        
 - Similarly, this can be done to **other** ***categories***.
 

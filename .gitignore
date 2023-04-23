@@ -1,2 +1,5 @@
-#Ignore display photos
+*__pycache__
 *.jpg
+*dist
+*build
+*yt5.egg-info

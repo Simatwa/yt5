@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-__version__ = "1.2"
-__author__ = "Smartwa"
 from pytube import YouTube, Playlist, Channel
 from sys import argv, exit
 from datetime import datetime
 import colorama as col
 import logging
 from threading import Thread as thr
+from . import __version__,__author__
 
 if "--usage" in argv:
     argv.extend(["url", "a"])
@@ -328,7 +327,8 @@ def usage():
     print(output(col.Fore.GREEN, tbl(data2)))
 
 
-if __name__ == "__main__":
+def launch():
+    global args
     parser = argparse.ArgumentParser(prog="yt5")
     parser.add_argument(
         "-v", "--version", action="version", version=f"%(prog)s v{__version__}"
@@ -426,5 +426,6 @@ if __name__ == "__main__":
         print(url[1])
         usage()
     print(output(col.Fore.BLUE, f"\n[*]~Done : {yt.time.now()}"))
-else:
-    usage()
+
+if __name__ == "__main__":
+    launch()
